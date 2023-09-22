@@ -36,3 +36,593 @@
     transform: rotate(360deg);
   }
 }
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: linear-gradient(to right, #2E3192 , #1BFFFF)
+}
+
+.base{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+.calculator,
+.calculator * {
+  box-sizing: border-box;
+  justify-content: center;
+}
+.calculator {
+  background: linear-gradient(
+    90deg,
+    rgb(46, 49, 146) 0%,
+    rgba(27, 255, 255, 0.77) 100%
+  );
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 293px;
+  height: 347px;
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-2 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.output {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 79px;
+  position: relative;
+}
+
+.previous-output {
+  background: rgba(52, 51, 51, 0.8);
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: right;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 36px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+.current-output {
+  background: rgba(52, 51, 51, 0.8);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: right;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 43px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 2rem;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.row-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.frame-3 {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 136px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.frame-3:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.ac {
+  color: #000000;
+  text-align: left;
+  font: 400 15px "Inter", sans-serif;
+  position: relative;
+}
+.delete {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.delete:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.del {
+  color: #000000;
+  text-align: left;
+  font: 400 15px "Inter", sans-serif;
+  position: relative;
+}
+.division {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.division:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.division{
+  color: #000000;
+  text-align: left;
+  font: 400 25px "Inter", sans-serif;
+  position: relative;
+}
+.row-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.one {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.one:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._one {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.two {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.two:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._two {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.three {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.three:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._three {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.multiplication {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.multiplication:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._multiplication {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.row-3 {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.four {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.four:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._four {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.five {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.five:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._five {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.six {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.six:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._six {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.addition {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.addition:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._addition {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.row-4 {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.seven {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.seven:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._seven {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.eight {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.eight:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._eight {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.nine {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.nine:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._nine {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.subtraction {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.subtraction:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._subtraction {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.row-5 {
+  display: flex;
+  flex-direction: row;
+  gap: 1px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.decimal {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.decimal:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._decimal
+  {
+    color: #000000;
+    text-align: left;
+    font: 400 20px "Inter", sans-serif;
+    position: relative;
+  }
+
+.zero {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.zero:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._zero {
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
+.evaluate {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 136px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.evaluate:hover{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+._evaluate{
+  color: #000000;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+}
