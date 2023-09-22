@@ -27,18 +27,19 @@ function reducer(state, {type, payload}){
           // currentOperand: "hello"
         }
       }
-      if (payload.digit ==="." && state.currentOperand.includes("."))
-      {
-      return state
-      }
       if(state.currentOperand == null && payload.digit.includes("."))
       {
       return {
         ...state,
-        currentOperand: "test"
+        currentOperand: `${state.currentOperand || "0"}${payload.digit}`
         }
 
       }
+      if (payload.digit ==="." && state.currentOperand.includes("."))
+      {
+      return state
+      }
+      
       return {
         ...state,
         currentOperand: `${state.currentOperand || ""}${payload.digit}`
