@@ -20,7 +20,6 @@ function reducer(state, {type, payload}){
       if (payload.digit ==="0" && state.currentOperand ==="0")
       {
         return {...state,
-          // currentOperand: "hello"
         }
       }
       if(state.currentOperand == null && payload.digit.includes("."))
