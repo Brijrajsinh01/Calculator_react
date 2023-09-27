@@ -124,7 +124,7 @@ function evaluate({currentOperand,previousOperand,operation}){
 function App() {
   const [{currentOperand,previousOperand,operation}, dispatch] =useReducer(reducer,{})
 
-  
+ // Buttons are created here 
   return (
   <div className="base">
     <div className="calculator">
