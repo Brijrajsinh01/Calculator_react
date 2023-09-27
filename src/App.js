@@ -13,10 +13,6 @@ export const ACTIONS={
 
 }
 
-// export const CLASSNAME={
-//   DIVISION: 'division',
-// }
-
 function reducer(state, {type, payload}){
   switch(type){
     case ACTIONS.ADD_DIGIT:
